@@ -1,0 +1,3652 @@
+﻿/*Slider style*/
+/* ==== Main CSS === */
+.img-fill {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-align: center
+}
+
+    .img-fill img {
+        min-height: 100%;
+        min-width: 100%;
+        position: relative;
+        display: inline-block;
+        max-width: none;
+    }
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.Grid1k {
+    padding: 0 15px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.blocks-box,
+.slick-slider {
+    margin: 0;
+    padding: 0 !important;
+}
+
+.slick-slide {
+    float: left /* If RTL Make This Right */;
+    padding: 0;
+}
+
+/* ==== Slider Style === */
+.Modern-Slider .item .img-fill {
+    height: 85vh;
+    background: #000;
+}
+
+    .Modern-Slider .item .img-fill .info {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        background: rgba(0,0,0,.50);
+        line-height: 100vh;
+        text-align: center;
+    }
+
+    .Modern-Slider .item .img-fill img {
+        /*filter:blur(5px);*/
+    }
+
+.Modern-Slider .item .info > div {
+    display: inline-block !important;
+    vertical-align: middle;
+}
+
+.Modern-Slider .NextArrow {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    width: 45px;
+    height: 45px;
+    background: rgba(0,0,0,.50);
+    border: 0 none;
+    margin-top: -22.5px;
+    text-align: center;
+    font: 20px/45px FontAwesome;
+    color: #FFF;
+    z-index: 5;
+    cursor: pointer;
+}
+
+    .Modern-Slider .NextArrow:before {
+        content: "\e86f ";
+    }
+
+.Modern-Slider .PrevArrow {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 45px;
+    height: 45px;
+    background: rgba(0,0,0,.50);
+    border: 0 none;
+    margin-top: -22.5px;
+    text-align: center;
+    font: 20px/45px FontAwesome;
+    color: #FFF;
+    z-index: 5;
+    cursor: pointer;
+}
+
+    .Modern-Slider .PrevArrow:before {
+        content: '\e86e';
+    }
+
+.Modern-Slider .slick-dots {
+    position: absolute;
+    height: 5px;
+    background: rgba(255,255,255,.20);
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+    .Modern-Slider .slick-dots li button {
+        display: none;
+    }
+
+    .Modern-Slider .slick-dots li {
+        float: left;
+        width: 0px;
+        height: 5px;
+        background: #d62828;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+
+        .Modern-Slider .slick-dots li.slick-active {
+            width: 100%;
+            animation: ProgressDots 11s both;
+        }
+
+.Modern-Slider .item.slick-active {
+    animation: Slick-FastSwipeIn 1s both;
+}
+
+.Modern-Slider {
+    background: #000;
+}
+
+/* ==== Slider Image Transition === */
+@@keyframes Slick-FastSwipeIn {
+    0% {
+        transform: rotate3d(0,1,0,150deg) scale(0) perspective(400px);
+    }
+
+    100% {
+        transform: rotate3d(0,1,0,0deg) scale(1) perspective(400px);
+    }
+}
+
+@@-webkit-keyframes ProgressDots {
+    from {
+        width: 0px;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@@keyframes ProgressDots {
+    from {
+        width: 0px;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* ==== Slick Slider Css Ruls === */
+.slick-slider {
+    position: relative;
+    display: block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0
+}
+
+    .slick-list:focus {
+        outline: none
+    }
+
+    .slick-list.dragging {
+        cursor: hand
+    }
+
+.slick-slider .slick-track, .slick-slider .slick-list {
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0)
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block
+}
+
+    .slick-track:before, .slick-track:after {
+        display: table;
+        content: ''
+    }
+
+    .slick-track:after {
+        clear: both
+    }
+
+.slick-loading .slick-track {
+    visibility: hidden
+}
+
+.slick-slide {
+    display: none;
+    float: left /* If RTL Make This Right */;
+    height: 100%;
+    min-height: 1px
+}
+
+    .slick-slide.dragging img {
+        pointer-events: none
+    }
+
+.slick-initialized .slick-slide {
+    display: block
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent
+}
+
+.slider-wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+/*Mobile Responsive*/
+@media (max-width: 767px) {
+    .slick-slider {
+        display: none;
+    }
+
+    .hero_single.version_2 {
+        height: 620px;
+    }
+
+    .ticker-box {
+        margin-top: 70px !important;
+    }
+}
+
+
+
+/*Slider style end*/
+
+
+.a4a-options-box {overflow: hidden; text-align: center;}
+.a4a-options-box li, .a4a-options-box ul {list-style-type: none; padding: 0; margin: 0;}
+.a4a-options-box li {display: inline;}
+
+ul.a4a-options-list li a { border: 2px solid #E32119;  border-radius: 50px; font-weight: 500; transition: 0.3s; display: inline-block;font-size: 16px; line-height: 16px; font-weight: 600; text-transform: uppercase; color: #fff; padding-left: 15px; padding-right: 15px;  padding-top: 7px; padding-bottom: 8px;  margin-bottom: 15px;   width: 142px;}
+ul.a4a-options-list li a:hover, ul.a4a-options-list li a:focus { color: #fff; text-decoration: none; outline: none;background-color: #E32119;}
+ul.a4a-options-list li i {font-size: 20px;position: relative; top: 0px;}
+ul.a4a-options-list .active {  background-color: #E32119;}
+
+.datepicker--nav { height: 32px; color: rgba(0,0,0,.6);background-color: #fff;}
+.datepicker--nav-title i { font-size: 16px;}
+.daterangepicker .calendar-table td, .daterangepicker .calendar-table th {font-size: 16px;}
+
+.panel-dropdown {padding: 0;}
+.panel-dropdown a::after {  top: 0px;}
+.panel-dropdown .panel-dropdown-content {top: 50px; }
+.spinner-btn {
+    background-color: #fff;
+    background-image: none;
+    border-radius: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: 1px solid #e6e4e4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    padding: 5px 12px;
+}
+.t-spinner { border: 1px solid #ccc !important; padding: 5px 8px !important;}
+.t-spinner-label {
+    margin-top: 10px;
+    color: rgba(0,0,0,.8);
+    font-weight: bold;
+}
+    .t-spinner-label span {
+        font-size: .70em;
+        margin-left: 5px;
+        text-transform: uppercase;
+        font-weight: normal;
+    }
+.no-letf-padding {padding-left: 0 !important; }
+
+.input-group { position: relative;display: table; border-collapse: separate;}
+.input-group-btn { position: relative; font-size: 0; white-space: nowrap;}
+.input-group-addon, .input-group-btn { width: 1%;white-space: nowrap; vertical-align: middle;}
+.input-group-addon, .input-group-btn, .input-group .form-control { display: table-cell;}
+.input-group { border-collapse: separate;}
+
+.multi-btns {
+    background: rgba(0,0,0,.6);
+    text-align: left;
+    height: 65px;
+    padding-top: 25px;
+}
+
+.multi-btns a { color: #fff; margin-left: 20px; }
+.multi-btns a i {  } 
+.multi-btns .city-add-btn { border: 1px solid;padding: 3px 7px; }
+.multi-btns .city-remove-btn {font-size: 35px;  float: left;margin-top: -10px; }
+
+.ticker-box{margin-top:200px;padding-left: 25px;padding-right: 25px;}
+a.box_news ul li {color: #3f2059;}
+.yt-booking-engine-snipe {
+    *zoom: 1;
+    color: #333;
+    font: normal 1em/18px Rubik,sans-serif;
+    line-height: 1
+}
+
+.be-container-snipe { text-align: left !important;}
+    .yt-booking-engine-snipe:after, .yt-booking-engine-snipe:before {
+        clear: both;
+        display: table;
+        line-height: 0;
+        content: ""
+    }
+
+    .yt-booking-engine-snipe li, .yt-booking-engine-snipe ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .yt-booking-engine-snipe .show {
+        display: block !important
+    }
+
+    .yt-booking-engine-snipe .hide {
+        display: none
+    }
+
+    .yt-booking-engine-snipe a {
+        color: #fff;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out
+    }
+
+    .yt-booking-engine-snipe .banner-image-overlay {
+        position: absolute;
+        background: rgba(0,0,0,.4);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0
+    }
+
+    .yt-booking-engine-snipe li.modifyList {
+        width: 22% !important
+    }
+
+        .yt-booking-engine-snipe li.modifyList.hotel_date {
+            width: 18% !important
+        }
+
+    .yt-booking-engine-snipe .be-container-snipe {
+        float: none;
+        max-width: 1060px;
+        margin: 0 auto;
+        padding: 0;
+        /*position: absolute;*/
+        top: 148px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 2;
+        -webkit-transition: all .2s ease;
+        -moz-transition: all .2s ease;
+        -ms-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        transition: all .2s ease
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .main-heading {
+            left: 0;
+            right: 0;
+            font-size: 1.85714em;
+            padding: 0 0 28px;
+            text-align: center;
+            color: #fff
+        }
+
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .main-heading {
+        padding: 0 0 15px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .calendarComponent {
+    width: 100%
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe {
+        top: 75px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe { background: rgba(0,0,0,.6); overflow: hidden}
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe {
+        /*width: 90%;*/
+        margin: 10px auto 0
+    }
+     .ticker-box {margin-top: 10px; }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li {
+    float: left
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li {
+        width: 16.6%;
+        margin: 0
+    }
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li {
+        width: 25%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a {
+    font-size: 1em;
+    transition: none !important;
+    display: block;
+    padding: 17px 15px;
+    font-weight: 500;
+    background: none;
+    border-top: none !important;
+    color: #fff
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a span {
+        font-weight: 400;
+        text-transform: uppercase
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a:hover {
+        background: #5f5d5e
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a.active-tab {
+        background-color: #ea2330
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a.active-tab .betaBookingEngine {
+            color: #fff !important
+        }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a#booking_engine_xplore {
+        position: relative
+    }
+
+@media only screen and (max-width:900px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a i {
+        display: block;
+        margin: 0 auto
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a {
+        width: 100%;
+        border-left: none
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a i {
+            margin: 0 auto
+        }
+}
+
+@media only screen and (max-width:570px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a {
+        min-height: auto
+    }
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a {
+        border-bottom: 1px solid transparent;
+        min-height: 50px;
+        border-right: none;
+        color: #fff;
+        text-align: center
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a .ico-be-buses, .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a .ico-be-dyna {
+    top: -2px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a .ico-be-holidays, .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a .ico-be-trains {
+    top: -3px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a .ico-be-hotels {
+    top: -1px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li a .ico-be-cruise {
+    top: -4px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li .be-tabs-more > li {
+    width: 100%
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li .be-tabs-more > li a {
+        font-size: 1.42857em;
+        border: none;
+        color: #333 !important;
+        border-bottom: 1px solid #e5e5e5;
+        text-align: left !important
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li .be-tabs-more > li a i {
+            display: inline-block
+        }
+
+            .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li .be-tabs-more > li a i.ico-be-arrow-rgt {
+                float: right
+            }
+
+            .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li .be-tabs-more > li a i.ico-be-holidays {
+                width: 25px
+            }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li .be-tabs-more > li a.active-tab, .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li .be-tabs-more > li a:focus, .yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li .be-tabs-more > li a:hover {
+            color: #333;
+            border-top: 0;
+            background: none
+        }
+
+.yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li .more-be .popover-title {
+    padding: 20px 0
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-tabs-snipe li .ico-pop-close {
+    top: 8px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .betaBookingEngine {
+    font-size: 9px;
+    position: absolute;
+    background: #f34f4f;
+    padding: 1px 4px;
+    color: #fff;
+    top: -5px;
+    border-radius: 2px;
+    right: 1px;
+    line-height: 10px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .smallNewFooter {
+    font-size: 8px;
+    position: absolute;
+    padding: 2px 4px;
+    top: 3px;
+    right: 0;
+    color: #fff;
+    background-color: #f34f4f
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-modules-snipe {
+    border-radius: 3px;
+    padding: 0;
+    position: relative;
+    background: none !important;
+    min-height: auto;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-modules-snipe {
+        width: 90%;
+        margin: 0 auto
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .trip-type.mor-option {
+    width: 100%;
+    display: none;
+    background-color: transparent;
+    margin-bottom: 10px !important;
+    margin-top: 0 !important;
+    padding: 0;
+    line-height: 16px
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .trip-type.mor-option {
+        width: 100%;
+        padding: 20px 0 0
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .trip-type.mor-option a {
+    font-size: .78571em;
+    background: rgba(0,0,0,.3);
+    border-radius: 2px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .trip-type.mor-option a .ico-be-radio {
+        display: none
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .trip-type.mor-option a.type-active {
+        background-color: #000;
+        color: #f34f4f
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .trip-type.mor-option a.type-active .ico-be-radio {
+            background-position: 0 -24px
+        }
+
+.yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .childageselect {
+    width: 25%;
+    margin: 9px;
+    float: left
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .childageselect .dd {
+        width: 58px !important;
+        border-radius: 3px !important;
+        border: 1px solid #e5e5e5 !important
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .childageselect .dd .pointDwnPax {
+            transform: scale(.7);
+            top: 9px !important;
+            right: 0 !important
+        }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .childageselect .dd .ddTitle .ddTitleText {
+            display: block !important
+        }
+
+.yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .dd {
+    border: 1px solid #e5e5e5;
+    border-radius: 0;
+    color: #666;
+    cursor: pointer;
+    float: left;
+    padding: 2px;
+    position: relative;
+    background-color: #fff;
+    background-image: none !important
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .ddcommon .ddTitle .ddTitleText {
+    display: block;
+    z-index: 999999
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .ddcommon .ddTitle .ddTitleText-h {
+    display: block;
+    padding: 5px 20px 5px 5px;
+    z-index: 999999
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .recent-srch {
+    width: 14%;
+    float: left;
+    margin-bottom: 6px
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .recent-srch {
+        display: none
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .recent-srch.active a, .yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .recent-srch.active i, .yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .recent-srch:hover a, .yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .recent-srch:hover i {
+    background-color: #212223
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .recent-srch a {
+    padding: 3px 5px !important;
+    background-color: #45494b;
+    border: 1px solid #525557;
+    transition: none !important;
+    display: block;
+    float: left
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .recent-srch .ico-be-recent-search {
+    background-color: #45494b;
+    background-position: -279px 1px;
+    border: 1px solid #525557;
+    height: auto;
+    margin: 0 0 0 -2px;
+    padding: 6px 12px 0;
+    cursor: pointer;
+    display: block;
+    float: left
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-modules-snipe .class-qs .search-flights-btn {
+    padding: 13px 10px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-modules-snipe h1 {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    font-size: 1.85714em;
+    padding: 0 0 28px;
+    text-align: center;
+    color: #fff
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-modules-snipe h1 {
+        top: -120px;
+        height: 60px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .icon-inside {
+    position: absolute !important;
+    top: 15px;
+    right: -3px;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.yt-booking-engine-snipe .be-container-snipe .ico-clear-returnDate {
+    display: inline;
+    position: absolute;
+    top: 25px;
+    right: 12px;
+    cursor: pointer;
+    z-index: 1;
+    font: inherit;
+    font-size: 100%
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details {
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+    border-radius: 0 0 3px 3px;
+    background: transparent
+}
+
+@media (min-width:611px) and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details {
+        box-shadow: none !important;
+        background: none !important
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details {
+        position: relative
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details.journey-detailsShadowNone {
+    box-shadow: none
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip {
+    float: left;
+    width: 68%
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.modifyList, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.modifyList {
+        width: 72%
+    }
+
+@media only screen and (max-width:1200px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.modifyList, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.modifyList {
+        width: 68%
+    }
+}
+
+@media only screen and (max-width:1024px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.modifyList, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.modifyList {
+        width: 100%
+    }
+}
+
+@media only screen and (max-width:1200px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip {
+        width: 68%
+    }
+    .ticker-box {padding-left: 0;  padding-right: 0; }
+}
+
+@media only screen and (max-width:1024px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip {
+        width: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li {
+    border-right: 1px solid #ccc;
+    float: left;
+    position: relative;}
+
+@media (min-width:611px) and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li {
+        margin-top: 13px !important
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li.initial-tab, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li.initial-tab {
+    border-radius: 3px 0 0 3px
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li.initial-tab, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li.initial-tab {
+        border-radius: 0
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li.initial-tab input, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li.initial-tab input {
+    border-radius: 3px 0 0 3px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li:focus, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li:focus {
+    border: 1px solid #2476bb
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li {
+        border: 1px solid silver;
+        float: none;
+        width: 100%;
+        border-top: 0 none
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li first-child, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li first-child {
+            border-top: 1px solid silver
+        }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li .ico-be-place, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li .ico-be-place {
+    top: 5px !important
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li .ico-be-place, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li .ico-be-place {
+        top: 4px !important
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li input[type=text], .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li input[type=text] {
+    background-color: #fff !important;
+    padding: 23px 15px;
+    max-height: 64px;
+    min-height: 64px;
+    color: #333;
+    font-size: 1.14286em;
+    border-radius: 0;
+}
+.yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li select {
+    background-color: #fff !important;
+    padding: 23px 15px;
+    max-height: 64px;
+    min-height: 64px;
+    color: #333;
+    font-size: 1.14286em;
+    border-radius: 0;
+}
+.yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li .select2-container--default .select2-selection--single {
+    height: 64px;
+    border: 0;
+    font-size: 1.14286em;
+}
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li .select2-container--default .select2-selection--single .select2-selection__rendered {
+        line-height: 64px;
+        padding-left: 15px;
+    }
+.yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 60px;
+
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li input[type=text], .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li input[type=text] {
+        padding: 20px 5px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li input[type=text].opacity3, .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li input[type=text].opacity4, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li input[type=text].opacity3, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li input[type=text].opacity4 {
+    background-color: #f3f3f3 !important;
+    opacity: 1
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li input[type=text].paddingCal, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li input[type=text].paddingCal {
+    padding-left: 7px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li .homestays_destInput, .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li .hotel_destInput, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li .homestays_destInput, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li .hotel_destInput {
+    padding-right: 30px !important
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li .ico-be-calender, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li .ico-be-calender {
+    top: 8px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li .ico-be-destination, .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li .ico-be-origin, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li .ico-be-destination, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li .ico-be-origin {
+    cursor: default
+}
+
+@media only screen and (min-width:1025px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li.w170, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li.w170 {
+        width: 20%;
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul > li.w170.modifyList, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul > li.w170.modifyList {
+            width: 18% !important
+        }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul .payByHourWrapper, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul .payByHourWrapper {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    margin: 0;
+    z-index: 999
+}
+
+@media (min-width:611px) and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul .payByHourWrapper, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul .payByHourWrapper {
+        width: 40%;
+        left: 33%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul .payByHourWrapper li, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul .payByHourWrapper li {
+    padding: 6px;
+    text-align: center;
+    overflow: hidden;
+    line-height: 16px;
+    cursor: pointer
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul .payByHourWrapper li.active, .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul .payByHourWrapper li:hover, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul .payByHourWrapper li.active, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul .payByHourWrapper li:hover {
+        background-color: #f34f4f !important;
+        color: #fff
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul .payByHourWrapper li.disabled, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul .payByHourWrapper li.disabled {
+        opacity: .5;
+        cursor: not-allowed
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul .payByHourWrapper li.disabled:hover, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul .payByHourWrapper li.disabled:hover {
+            background-color: #fff !important;
+            color: #333
+        }
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity > ul .payByHourWrapper .timeFormat, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip > ul .payByHourWrapper .timeFormat {
+    display: inline-block;
+    width: 50%;
+    background: #f4f4f4;
+    float: left;
+    padding: 8px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li {
+    border-right: 1px solid #ccc;
+    float: left;
+    position: relative
+}
+
+@media (min-width:611px) and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li {
+        margin-top: 13px !important
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li.initial-tab, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li.initial-tab {
+    border-radius: 3px 0 0 3px
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li.initial-tab, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li.initial-tab {
+        border-radius: 0
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li.initial-tab input, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li.initial-tab input {
+    border-radius: 0 0 0 3px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li:focus, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li:focus {
+    border: 1px solid #2476bb
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li {
+        border: 1px solid silver;
+        float: none;
+        width: 100%;
+        border-top: 0 none
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li first-child, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li first-child {
+            border-top: 1px solid silver
+        }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li .ico-be-place, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li .ico-be-place {
+    top: 5px !important
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li .ico-be-place, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li .ico-be-place {
+        top: 4px !important
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li input[type=text], .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li input[type=text] {
+    background-color: #fff !important;
+    padding: 23px 15px;
+    max-height: 64px;
+    min-height: 64px;
+    color: #333;
+    font-size: 1.14286em
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li input[type=text], .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li input[type=text] {
+        padding: 20px 5px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li input[type=text].opacity3, .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li input[type=text].opacity4, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li input[type=text].opacity3, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li input[type=text].opacity4 {
+    background-color: #f3f3f3 !important;
+    opacity: 1
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li .homestays_destInput, .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li .hotel_destInput, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li .homestays_destInput, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li .hotel_destInput {
+    padding-right: 30px !important
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li .ico-be-calender, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li .ico-be-calender {
+    top: 8px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li .ico-be-destination, .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li .ico-be-origin, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li .ico-be-destination, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li .ico-be-origin {
+    cursor: default
+}
+
+@media only screen and (min-width:1025px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .multicity-leg ul > li.w170, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .multicity-leg ul > li.w170 {
+        width: 22%
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip {
+        float: none;
+        width: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity .beSwapCity, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip .beSwapCity {
+    display: none
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap {
+    position: relative;
+    clear: both;
+}
+
+@media only screen and (min-width:1025px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap li .cityPadLeft, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap li .cityPadLeft {
+        padding-left: 23px
+    }
+}
+
+@media only screen and (min-width:1025px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap li .cityPadRight, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap li .cityPadRight {
+        padding-right: 23px;
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap li .cityPadRight.ac_loading, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap li .cityPadRight.ac_loading {
+    background-position: 92% !important
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap li.w50, .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap li.w225, .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap li.w315, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap li.w50, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap li.w225, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap li.w315 {
+    background-color: #fff
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .beSwapCity, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .beSwapCity {
+    position: absolute;
+    border: 1px solid #e3e6ea;
+    right: -15px;
+    top: 19px;
+    height: 30px;
+    padding: 7px;
+    width: 30px;
+    display: block;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: #fff
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .beSwapCity, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .beSwapCity {
+        right: 50%;
+        top: 36px;
+        display: none;
+        transform: rotate(90deg) !important
+    }
+}
+
+@media only screen and (max-width:1200px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .beSwapCity, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .beSwapCity {
+        right: -6%
+    }
+}
+
+@media only screen and (max-width:1024px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .beSwapCity, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .beSwapCity {
+        right: -6.8%
+    }
+}
+
+@media only screen and (max-width:800px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .beSwapCity, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .beSwapCity {
+        right: -8.5%
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .beSwapCity, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .beSwapCity {
+        left: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .beSwapCity.jsRotateClass, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .beSwapCity.jsRotateClass {
+    transform: rotate(180deg)
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .beSwapCity.jsRotateClass .ico-be-leftRightArow, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .beSwapCity.jsRotateClass .ico-be-leftRightArow {
+        transform: rotate(-180deg)
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .beSwapCity .ico-be-leftRightArow, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .beSwapCity .ico-be-leftRightArow {
+    margin: 0;
+    background: url(../img/lra.png) no-repeat;
+    opacity: .7;
+    /*background-position-y: -1.5px;*/
+    height: 16px;
+    width: 16px;
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .beSwapCity.swapCityDisable, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .beSwapCity.swapCityDisable {
+    pointer-events: none;
+    opacity: 1
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .beSwapCity.swapCityDisable .ico-be-leftRightArow, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .beSwapCity.swapCityDisable .ico-be-leftRightArow {
+        background: url(~/Content/fresco/snipe/dist/images/swipe.svg?e341848dbd38ba926518e6e2b18dda56) 50% no-repeat;
+        opacity: .5
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .add-mc-leg, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .add-mc-leg {
+    right: -18%
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity.CitySwap .multicity-leg .beSwapCity, .yt-booking-engine-snipe .be-container-snipe .journey-details .oneway-roundtrip.CitySwap .multicity-leg .beSwapCity {
+    right: -5.2%
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity-leg {
+    margin-bottom: 2px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity-leg .ico-be-cancel-leg {
+        cursor: pointer;
+        position: absolute;
+        right: -30px;
+        top: 23px;
+        display: block
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .add-mc-leg {
+    font-size: .85714em;
+    position: absolute;
+    right: 15%;
+    bottom: 27px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .add-mc-leg .ico-be-add {
+        margin: 0
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .add-mc-leg a {
+        padding: 5px 10px;
+        font-size: 13px;
+        border: 1px solid
+    }
+
+@media only screen and (max-width:1024px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .add-mc-leg {
+        bottom: auto
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details input {
+    background-color: #fff !important;
+    padding: 10px 5px;
+    color: #38404a;
+    padding: 12px 10px\9;
+    text-overflow: ellipsis;
+    width: 100% !important;
+    font-size: 1em;
+    border: none
+}
+
+@media only screen and (max-width:1200px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details input {
+        padding: 20px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details input::-ms-clear {
+    width: 0;
+    height: 0
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details input {
+        padding: 24px 15px
+    }
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details input {
+        padding: 18px 15px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .icon-inside.ico-be-arrow-down-grey-v2 {
+    top: 27px
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .icon-inside.ico-be-arrow-down-grey-v2 {
+        top: 20px
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .icon-inside.mic-icon {
+        right: -18px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .w225 {
+    width: 30%;
+}
+/*.yt-booking-engine-snipe .be-container-snipe .journey-details .w315 {
+    width: 40%;
+}*/
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w225 {
+        float: none;
+        width: 100%
+    }
+    /*.yt-booking-engine-snipe .be-container-snipe .journey-details .w315 {
+        float: none;
+        width: 100%
+    }*/
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .w66 {
+    width: 60% !important
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w66.modifyList {
+        width: 28% !important
+    }
+
+@media only screen and (max-width:720px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w66.modifyList {
+        width: 100% !important
+    }
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w66.modifyList {
+        width: 100% !important
+    }
+}
+
+@media only screen and (max-width:720px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w66 {
+        width: 100% !important
+    }
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w66 {
+        width: 100% !important
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .w170 {
+    width: 20%
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w170.modifyList {
+        width: 18% !important
+    }
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w170.modifyList {
+        float: none;
+        width: 100% !important
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w170 {
+        float: none;
+        width: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .w315 {
+    width: 40%
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .multicity-leg .w315 {
+    width: 39%
+}
+
+@media only screen and (max-width:1024px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .multicity-leg .w315 {
+        width: 36%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .w450 {
+    width: 60%
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w450 {
+        float: none;
+        width: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .w80 {
+    width: 80%;
+    margin-bottom: 12px
+}
+
+@media only screen and (max-width:900px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w80 {
+        float: left;
+        width: 68% !important
+    }
+}
+
+@media only screen and (max-width:800px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w80 {
+        float: none;
+        width: 100% !important
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .be-dropdown {
+    text-align: left;
+    position: absolute;
+    border: 1px solid #d1d1d1;
+    background: #fff;
+    top: 70px;
+    left: 0;
+    padding: 12px 15px;
+    z-index: 1;
+    width: 100%;
+    border-radius: 3px;
+    transition: visibility 0s linear .3s,opacity .3s linear;
+    box-shadow: 0 6px 8px rgba(0,0,0,.15)
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .be-dropdown .room-no {
+        margin-bottom: 10px;
+        font-weight: 500
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .be-dropdown:before {
+        float: left;
+        content: "";
+        border-bottom: 8px solid #f7f7f7;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        margin: -18px 0 0 15px
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .be-ddn-footer {
+    text-transform: uppercase;
+    padding: 10px 0 5px;
+    overflow: hidden;
+    width: 100%
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .be-ddn-footer .cancel, .yt-booking-engine-snipe .be-container-snipe .journey-details .be-ddn-footer .done {
+        font-size: .857em;
+        cursor: pointer
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .be-ddn-footer .cancel {
+        float: left;
+        padding: 5px 15px;
+        margin-left: -15px
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .be-ddn-footer .cancel:focus, .yt-booking-engine-snipe .be-container-snipe .journey-details .be-ddn-footer .cancel:hover {
+            color: #000
+        }
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .be-ddn-footer .done {
+        float: right;
+        background: #ea2330;
+        padding: 9px;
+        text-align: center;
+        color: #fff;
+        border-radius: 4px
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .be-ddn-footer .done:focus, .yt-booking-engine-snipe .be-container-snipe .journey-details .be-ddn-footer .done:hover {
+            background-color: #c00100
+        }
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .diff-dates-date {
+    width: 100%;
+    clear: both;
+    margin: 10px 0
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .diff-dates-date .custom-check {
+        color: #333;
+        font-size: 13px
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .diff-dates-date .custom-check:before {
+            content: " ";
+            float: left;
+            width: 1em;
+            height: 1em;
+            background: #fff;
+            border: 1px solid #d7dce1;
+            margin: 2px -7px 0 0;
+            border-radius: 3px
+        }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .diff-dates-date .custom-check.be-v2-active:before {
+            background-color: #f34f4f !important;
+            border: 1px solid #f34f4f;
+            background: url(~/Content/fresco/snipe/dist/images/checked.svg?3965dbb7c2e207cba40d0846da9787c1) 50% no-repeat;
+            background-size: 10px 10px;
+            border-radius: 3px
+        }
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .diff-dates-date .ico-checkbox {
+        display: none
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .diff-dates-date input[type=text] {
+        border: 1px solid #999
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .diff-dates-date ul {
+        width: 100%;
+        float: left;
+        margin: 10px 0
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .diff-dates-date ul li {
+            width: 50%;
+            float: left;
+            position: relative
+        }
+
+            .yt-booking-engine-snipe .be-container-snipe .journey-details .diff-dates-date ul li input[type=text] {
+                width: 100%;
+                float: left;
+                padding: 10px !important
+            }
+
+            .yt-booking-engine-snipe .be-container-snipe .journey-details .diff-dates-date ul li:first-child input[type=text] {
+                border-right: 0 !important
+            }
+
+            .yt-booking-engine-snipe .be-container-snipe .journey-details .diff-dates-date ul li .icon-inside {
+                right: 0 !important
+            }
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .add-del-room {
+    clear: both;
+    margin: 20px 0;
+    float: left
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .add-del-room a {
+        color: #666;
+        font-size: .85714em;
+        border: 1px solid #e3e6ea;
+        border-radius: 3px;
+        padding: 10px
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .add-del-room a.active, .yt-booking-engine-snipe .be-container-snipe .journey-details .add-del-room a:hover {
+            color: #f34f4f;
+            border: 1px solid #ea2330;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out
+        }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .add-del-room a.homestayaddRoom:hover, .yt-booking-engine-snipe .be-container-snipe .journey-details .add-del-room a.hoteladdRoom:hover {
+            background-color: #ea2330;
+            color: #fff
+        }
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details {
+    background: #fff;
+    box-sizing: border-box;
+    color: #333;
+    float: left;
+    font-size: 1.14286em;
+    padding: 21px 10px;
+    position: relative;
+    width: 20%;
+    cursor: pointer;
+    max-height: 64px;
+    min-height: 64px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details.modifyList {
+        width: 16%
+    }
+
+@media (min-width:311px) and (max-width:610px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details.modifyList {
+        width: 100%
+    }
+}
+
+@media (-ms-high-contrast:none) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details {
+        padding: 25.5px 10px 23px;
+        min-height: 0
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details {
+        float: none;
+        width: 100%;
+        border-right: 1px solid #e5e5e5;
+        padding: 20px 8px;
+        margin-top: 0;
+        max-height: unset;
+        min-height: unset
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .ico-be-sub-arrow-v2 {
+    position: absolute;
+    right: 5px;
+    top: -16px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .ico-be-sub-arrow {
+    position: absolute;
+    right: 5px;
+    top: -16px;
+    display: none
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #d1d1d1;
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+    left: 0;
+    padding: 10px;
+    position: absolute;
+    text-align: left;
+    top: 70px;
+    transition: visibility 0s linear .3s,opacity .3s linear 0s;
+    width: 100%;
+    z-index: 2
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown {
+        top: 55px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown.w300 {
+    min-width: 270px;
+    padding-bottom: 0;
+    padding-right: 0
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown.w300 {
+        padding-bottom: 10px;
+        left: 0 !important;
+        border-radius: 3px;
+        top: 55px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type {
+    width: 90%;
+    float: left;
+    padding-top: 10px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .dd {
+        border: none;
+        background-color: #fff
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .dd .ddTitle {
+            display: none !important
+        }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .dd .ddChild {
+            position: relative !important;
+            border: medium none;
+            box-shadow: none;
+            display: block !important;
+            height: auto !important;
+            background-color: #fff
+        }
+
+            .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .dd .ddChild li {
+                display: block;
+                width: 100%;
+                background-color: #fff;
+                padding: 5px 0
+            }
+
+                .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .dd .ddChild li span {
+                    margin-left: 10px;
+                    font-size: .92857em
+                }
+
+                .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .dd .ddChild li:before {
+                    content: " ";
+                    float: left;
+                    width: 16px;
+                    height: 16px;
+                    background: #fff;
+                    border: 1px solid #d7dce1;
+                    margin: -2px -3px 0 0;
+                    border-radius: 50%
+                }
+
+@media (-ms-high-contrast:none) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .dd .ddChild li:before {
+        margin: -1px -3px 0 0 !important
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .dd .ddChild li:before ::-ms-backdrop {
+            margin: -1px -3px 0 0
+        }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .dd .ddChild li.selected, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .dd .ddChild li:hover {
+    color: #000 !important
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .dd .ddChild li.selected:before {
+        background: #fff;
+        border: 1px solid #f34f4f
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .dd .ddChild li.selected:after {
+        content: "";
+        float: left;
+        width: 10px;
+        height: 10px;
+        background-color: #f34f4f;
+        margin: -14px 0 0 3px;
+        border-radius: 50%
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .custom-radio-baggage_sprite {
+    background: url("//ns.yatracdn.com/common/images/fresco/custom-radio-2.png") no-repeat 0 0;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type .active-radio {
+    background-position: -9px -16px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .flight-class-type label.selected .active-radio {
+    background-position: -43px -17px !important
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .pax-limit {
+        margin-bottom: 1.5em
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .pax-limit:last-child {
+            margin-bottom: 0
+        }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .pax-limit .pax-title {
+    float: left;
+    font-size: .92857em
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .pax-limit .pax-title .light-grey {
+        color: #8a8a8a;
+        display: block;
+        font-size: .786em
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .pax-limit .select-child-ages .dd {
+    margin-right: 25px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .pax-limit .dd {
+    float: right
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .pax-limit .dd {
+        margin-right: 20px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .ico-be-sub-arrow, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details .be-dropdown .ico-be-sub-arrow-v2 {
+    position: absolute;
+    top: -16px;
+    right: 5px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown {
+    border-radius: 3px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown.w300, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown.w300, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown.w300, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown.w300 {
+        padding: 12px
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .verticalSepr, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .verticalSepr, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .verticalSepr, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .verticalSepr {
+        clear: both;
+        height: 1px;
+        background: #d9d9d9;
+        margin-bottom: 10px
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit {
+        border-top: none;
+        padding: 10px 0;
+        clear: both
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit.select-child-ages, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit.select-child-ages, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit.select-child-ages, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit.select-child-ages {
+            border-top: none;
+            padding: 0
+        }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .pax-title, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .pax-title, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .pax-title, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .pax-title {
+            float: left !important;
+            font-size: 1em;
+            margin-top: 5px
+        }
+
+            .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .pax-title .light-grey, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .pax-title .light-grey, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .pax-title .light-grey, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .pax-title .light-grey {
+                display: inline;
+                margin-left: 10px
+            }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .dd, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .dd, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .dd, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .dd {
+            float: right !important;
+            margin: 0;
+            clear: both
+        }
+
+            .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .dd .ddTitle, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .dd .ddTitle, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .dd .ddTitle, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .dd .ddTitle {
+                top: -15px
+            }
+
+                .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerMinus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerMinus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerMinus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerMinus {
+                    left: -65px;
+                    border-bottom-left-radius: 3px;
+                    border-top-left-radius: 3px;
+                    width: 30px;
+                    top: -15px
+                }
+
+                .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerPlus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerPlus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerPlus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerPlus {
+                    right: 2px;
+                    border-bottom-right-radius: 3px;
+                    border-top-right-radius: 3px;
+                    width: 30px;
+                    top: -15px
+                }
+
+                .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerMinus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerPlus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerMinus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerPlus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerMinus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerPlus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerMinus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .dd .ddTitle .ddSpinnerPlus {
+                    background-color: #fff
+                }
+
+                .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .dd .ddTitle .ddTitleText, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .dd .ddTitle .ddTitleText, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .dd .ddTitle .ddTitleText, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .dd .ddTitle .ddTitleText {
+                    display: none
+                }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .childageselect .ageoptions:hover, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .childageselect .ageoptions:hover, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .childageselect .ageoptions:hover, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .childageselect .ageoptions:hover {
+            background-color: #f34f4f;
+            color: #fff !important
+        }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .childageselect .agedropdown, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .childageselect .agedropdown, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .childageselect .agedropdown, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .childageselect .agedropdown {
+            width: 58px !important;
+            border-radius: 3px !important;
+            border: 1px solid #e5e5e5;
+            color: #666;
+            cursor: pointer !important;
+            float: left;
+            padding: 2px;
+            position: relative;
+            background-color: #fff;
+            background-image: none !important
+        }
+
+            .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .childageselect .agedropdown .agepointer, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .childageselect .agedropdown .agepointer, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .childageselect .agedropdown .agepointer, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .childageselect .agedropdown .agepointer {
+                border-top: 4px solid #333;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent
+            }
+
+            .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .childageselect .agedropdown .ageselect, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .childageselect .agedropdown .ageselect, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .childageselect .agedropdown .ageselect, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .childageselect .agedropdown .ageselect {
+                width: 100%;
+                padding: 6px;
+                cursor: pointer !important
+            }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit .childageselect .dd .ddTitle, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit .childageselect .dd .ddTitle, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit .childageselect .dd .ddTitle, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit .childageselect .dd .ddTitle {
+            top: 0
+        }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit ~ .pax-limit, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit ~ .pax-limit, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit ~ .pax-limit, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit ~ .pax-limit {
+            border-top: 1px solid #d9d9d9 !important;
+            padding: 10px 0;
+            clear: both
+        }
+
+            .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit ~ .pax-limit.select-child-ages, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit ~ .pax-limit.select-child-ages, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit ~ .pax-limit.select-child-ages, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit ~ .pax-limit.select-child-ages {
+                border-top: none !important;
+                padding: 0
+            }
+
+            .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit ~ .pax-limit .pax-title, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit ~ .pax-limit .pax-title, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit ~ .pax-limit .pax-title, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit ~ .pax-limit .pax-title {
+                float: left !important;
+                font-size: 1em;
+                margin-top: 5px
+            }
+
+                .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit ~ .pax-limit .pax-title .light-grey, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit ~ .pax-limit .pax-title .light-grey, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit ~ .pax-limit .pax-title .light-grey, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit ~ .pax-limit .pax-title .light-grey {
+                    display: inline;
+                    margin-left: 10px
+                }
+
+            .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit ~ .pax-limit .dd, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit ~ .pax-limit .dd, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit ~ .pax-limit .dd, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit ~ .pax-limit .dd {
+                float: right !important;
+                margin: 0;
+                clear: both
+            }
+
+                .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle {
+                    top: -15px
+                }
+
+                    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle .ddSpinnerMinus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle .ddSpinnerMinus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle .ddSpinnerMinus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle .ddSpinnerMinus {
+                        left: -65px;
+                        border-bottom-left-radius: 3px;
+                        border-top-left-radius: 3px;
+                        width: 30px;
+                        top: -15px
+                    }
+
+                    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle .ddSpinnerPlus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle .ddSpinnerPlus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle .ddSpinnerPlus, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle .ddSpinnerPlus {
+                        right: 2px;
+                        border-bottom-right-radius: 3px;
+                        border-top-right-radius: 3px;
+                        width: 30px;
+                        top: -15px
+                    }
+
+                    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle .ddTitleText, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle .ddTitleText, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle .ddTitleText, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit ~ .pax-limit .dd .ddTitle .ddTitleText {
+                        display: none
+                    }
+
+            .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_byop_passengerBox.be-dropdown .pax-limit ~ .pax-limit .childageselect .dd .ddTitle, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_flight_passengerBox.be-dropdown .pax-limit ~ .pax-limit .childageselect .dd .ddTitle, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_homestay_pax_box.be-dropdown .pax-limit ~ .pax-limit .childageselect .dd .ddTitle, .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details #BE_Hotel_pax_box.be-dropdown .pax-limit ~ .pax-limit .childageselect .dd .ddTitle {
+                top: 0
+            }
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .search-btn {
+    background: linear-gradient(to bottom,#E32119,#87130E);
+    /*border-radius: 3px;*/
+    float: right;
+    margin: 11px 10px 0 0;
+    padding: 13px 5px;
+    /*max-width: 110px;*/
+    min-width: 90px;
+    min-height: 40px;
+    color: #fff;
+    font-size: 1.14286em;
+    font-weight: 500;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -ms-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+    border: 0;
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .search-btn:hover {
+        background: linear-gradient(to bottom,#87130E,#87130E);
+    }
+
+@media only screen and (max-width:1024px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .search-btn {
+        width: 100%;
+        margin-top: 15px;
+        border-radius: 0
+    }
+}
+
+@media (min-width:611px) and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .search-btn {
+        padding: 23px 5px;
+        margin: 15px 0
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .search-btn {
+        float: none;
+        width: 100%;
+        padding: 24px 15px;
+        margin-top: 0;
+        text-indent: 0;
+        font: normal 1.143em/18px Rubik,sans-serif;
+        /*background-image: none*/
+    }
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .search-btn {
+        padding: 18px 15px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .oneWayType, .yt-booking-engine-snipe .be-container-snipe .journey-details .opacity3 {
+    opacity: .8 !important;
+    filter: alpha(opacity=70);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    cursor: pointer
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .inactiveElem {
+    opacity: .9;
+    filter: alpha(opacity=70);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    cursor: default
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .w300 {
+    min-width: 300px;
+    padding-right: 0
+}
+
+@media only screen and (max-width:360px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w300 {
+        min-width: 282px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .w100 {
+    width: 82px;
+    margin-right: 15px;
+    float: left
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .mr0 {
+    margin-right: 0
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .pax-limit .dd {
+    float: left !important;
+    margin: 10px 0
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .be-dropdown {
+    left: 1% !important
+}
+
+@media only screen and (max-width:1024px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .be-dropdown {
+        left: 0 !important
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .be-dropdown .ico-be-sub-arrow, .yt-booking-engine-snipe .be-container-snipe .journey-details .be-dropdown .ico-be-sub-arrow-v2 {
+            left: 5px
+        }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .be-dropdown .pax-title {
+    float: none !important
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .be-dropdown .childageselect .dd {
+    margin-right: 10px !important
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .fixHidemoreOption {
+    margin-bottom: 18px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .journey-details .custom-check .ico-checkbox {
+    color: #f34f4f
+}
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option {
+    width: 100%;
+    padding: 10px 5px;
+    float: left;
+    clear: both;
+    background: rgba(0,0,0,.6);
+    /*border-radius: 3px 3px 0 0;*/
+    margin-bottom: -28px
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .mor-option {
+        width: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options {
+    float: left
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options.prefer {
+        float: left
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options.prefer li {
+    margin-right: 10px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options.prefer li:last-child {
+        margin-right: 0
+    }
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options.prefer li {
+        /*width: 100%*/
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options li {
+    float: left
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options li .ico-be-separator {
+        top: 5px;
+        margin: 0 5px;
+        float: left
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options a {
+    font-size: 1em;
+    color: #fcfcfc;
+    padding: 0;
+    display: block;
+    margin: 0;
+    float: left;
+    transition: none !important
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options a.lff-map-search {
+        color: #e79d05;
+        background-color: transparent
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-with-arrow {
+    width: 100px;
+    margin-right: 5px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-with-arrow .dd {
+        background: none;
+        border: none;
+        color: #fff;
+        padding: 1px;
+        top: 0;
+        line-height: 5px
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-with-arrow .dd:hover {
+            color: #ffaa1f;
+            border-radius: 3px
+        }
+
+        .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-with-arrow .dd .ddTitle .ddTitleText {
+            font-size: .85714em;
+            padding: 5px
+        }
+
+        .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-with-arrow .dd .ddTitle .pointDwnPax {
+            width: 7px;
+            background-position: -247px -90px;
+            height: 4px;
+            top: 6px;
+            right: -10px
+        }
+
+        .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-with-arrow .dd .ddChild {
+            font-size: .85714em
+        }
+
+            .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-with-arrow .dd .ddChild.scrollable .vertical.scroll-bar {
+                width: 6px !important
+            }
+
+            .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-with-arrow .dd .ddChild li {
+                color: #333;
+                width: 100% !important;
+                line-height: 12px
+            }
+
+                .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-with-arrow .dd .ddChild li.selected, .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-with-arrow .dd .ddChild li:hover {
+                    color: #fff !important
+                }
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .baggage-tooltip {
+    position: relative
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .baggage-tooltip:hover .baggage-terms {
+        display: block
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .baggage-tooltip .baggage-terms {
+        display: none;
+        background: #fff;
+        border: 1px solid #c3c3c3;
+        border-radius: 6px;
+        box-shadow: 0 1px 5px 1px #5f5f5f;
+        color: #666;
+        font-size: .92857em;
+        left: -120px;
+        line-height: 1.3;
+        padding: 12px 15px 15px 10px;
+        position: absolute;
+        text-align: left;
+        bottom: 30px;
+        width: 400px;
+        z-index: 9
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .baggage-tooltip .baggage-terms .note-list {
+            margin-top: -3px
+        }
+
+            .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .baggage-tooltip .baggage-terms .note-list > p strong {
+                margin-left: 1px
+            }
+
+            .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .baggage-tooltip .baggage-terms .note-list strong {
+                font-size: 1.1em;
+                color: #333
+            }
+
+        .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .baggage-tooltip .baggage-terms ul.terms-list li {
+            overflow: hidden;
+            margin: 8px 0 0;
+            float: none
+        }
+
+            .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .baggage-tooltip .baggage-terms ul.terms-list li i.bullet-ico {
+                background: url(~/Content/fresco/snipe/dist/images/booking-engine.png?0597d1f053fcc7054b285430b792d73d) no-repeat -139px -93px;
+                display: inline-block;
+                height: 8px;
+                margin: 6px 5px 0 0;
+                vertical-align: top;
+                width: 8px;
+                float: left
+            }
+
+            .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .baggage-tooltip .baggage-terms ul.terms-list li span {
+                display: inline-block;
+                width: 95%;
+                float: left
+            }
+
+                .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .baggage-tooltip .baggage-terms ul.terms-list li span b {
+                    font-weight: 500
+                }
+
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .baggage-tooltip .arrow-dwn-tooltip {
+        display: block;
+        position: absolute;
+        bottom: -19px;
+        left: 42%;
+        background: url(~/Content/fresco/snipe/dist/images/booking-engine.png?0597d1f053fcc7054b285430b792d73d) no-repeat -162px -91px;
+        width: 30px;
+        height: 19px
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options > li .overlay-hider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 1
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options > li .ico-be-separator {
+        display: none
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options > li.disabled-state {
+    position: relative
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options > li.disabled-state a {
+        opacity: .4;
+        filter: alpha(opacity=60);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+        cursor: default
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options > li.disabled-state .overlay-hider {
+        display: block
+    }
+
+@media only screen and (max-width:1024px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options > li {
+        margin-left: 15px
+    }
+}
+
+@media only screen and (max-width:800px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options > li#specialFareContainer {
+        margin-left: 0
+    }
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options > li {
+        margin: 5px 15px 10px 0 !important
+    }
+}
+
+@media only screen and (max-width:320px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options > li {
+        margin: 5px 5px 5px 0 !important
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options > li.no-border {
+    margin-top: 0
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options > li#specialFareContainer {
+        margin-bottom: 0 !important
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .tab-head {
+    font: normal .857em/18px Rubik,sans-serif;
+    color: #fff;
+    padding-bottom: 3px
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .tab-head {
+        color: #333
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .tab-head .ico-be-arrow-down-white {
+    top: 3px
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .tab-head .ico-be-arrow-down-white {
+        top: -3px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .be-dropdown {
+    top: 40px;
+    padding: 0
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .be-dropdown .ico-be-sub-arrow, .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .be-dropdown .ico-be-sub-arrow-v2 {
+        position: absolute;
+        top: -16px;
+        right: 5px
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-class li {
+    font-size: .857em;
+    padding: 5px 14px 7px;
+    cursor: pointer
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-class li.active, .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-class li:focus, .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .select-class li:hover {
+        background: #666;
+        color: #fff
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .mor-option.multicityMoreOption {
+    width: 68%
+}
+
+.yt-booking-engine-snipe .be-container-snipe .pointDwnPax {
+    background: none;
+    content: "";
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    margin: 0;
+    position: absolute;
+    border-top: 6px solid #333;
+    transform: rotate(0deg);
+    right: 8px;
+    top: 44%
+}
+
+.yt-booking-engine-snipe .be-container-snipe .nudge-arrow-x {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    font-size: 32px;
+    color: #090909;
+    z-index: -1;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: 6;
+    -moz-animation-iteration-count: 6;
+    animation-iteration-count: 6;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-animation-name: nudge-dir-x;
+    -moz-animation-name: nudge-dir-x;
+    animation-name: nudge-dir-x;
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .nudge-arrow-x:after {
+        content: ""
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .multicity-stay {
+    margin-top: 22px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .multicity-stay .w80 {
+        width: 80%;
+        margin-top: 15px
+    }
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .multicity-stay .w80 {
+        width: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-hotels .hotelremoveRoom {
+    margin-left: 5px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-hotels .ac_results .flR {
+    float: right
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-hotels .ac_results li.heading i {
+    background: transparent url(~/Content/fresco/snipe/dist/images/booking-engine.png?0597d1f053fcc7054b285430b792d73d) no-repeat scroll -215px -335px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-hotels .ac_results li.heading .iconImage.hotels {
+    background-position: -29px -121px;
+    float: right;
+    padding-left: 10px;
+    width: 19px;
+    margin-right: 5px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-hotels .ac_results li.heading .iconImage.activities {
+    background-position: -195px -119px;
+    float: right;
+    padding-left: 10px;
+    width: 15px;
+    margin-right: 5px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-hotels .ac_results li.heading .iconImage.cities {
+    background-position: -4px -121px;
+    float: right;
+    padding-left: 10px;
+    width: 15px;
+    margin-right: 5px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-hotels .ac_results li.heading .iconImage.locations {
+    background-position: -55px -120px;
+    float: right;
+    padding-left: 10px;
+    width: 10px;
+    margin-right: 5px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-hotels .ac_results li.heading .iconImage.Chain.Hotels {
+    background-position: -73px -120px;
+    float: right;
+    padding-left: 10px;
+    width: 10px;
+    margin-right: 5px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-hotels .ac_results li.heading .iconImage.homestay {
+    background-position: -146px -117px;
+    float: right;
+    padding-left: 10px;
+    width: 19px;
+    margin-right: 5px
+}
+
+@media (min-width:613px) and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-hotels .ac_results {
+        width: 46.3% !important
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-bus .journey-details .oneway-roundtrip ul > li {
+    width: 33.33333%
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-bus .journey-details .oneway-roundtrip ul > li {
+        width: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-bus .journey-details .CitySwap .beSwapCity {
+    right: -5.2%
+}
+
+@media only screen and (max-width:1024px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-bus .journey-details .CitySwap .beSwapCity {
+        right: -6.2%
+    }
+}
+
+@media only screen and (max-width:800px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-bus .journey-details .CitySwap .beSwapCity {
+        right: -8%
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-bus .journey-details .CitySwap .beSwapCity {
+        right: 50%;
+        top: 36px;
+        transform: rotate(90deg) !important
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-bus .journey-details .CitySwap .beSwapCity {
+        left: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .bus-pax-select {
+    padding: 10px !important
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .bus-pax-select .dd {
+        background-color: #fff
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .bus-pax-select .ddSpinnerMain {
+        width: 100% !important
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .bus-pax-select .ddSpinnerMain .ddTitle .ddTitleText {
+            width: auto;
+            float: left;
+            line-height: 46px;
+            border: none;
+            background-color: #fff !important;
+            margin-left: 10px
+        }
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .bus-pax-select .ddSpinnerMain .ddTitle .ddTitleText {
+        margin-left: 0
+    }
+}
+
+@media all\0 {
+    .yt-booking-engine-snipe .be-container-snipe .bus-pax-select .ddSpinnerMain .ddTitle .ddTitleText {
+        line-height: 41px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .bus-pax-select .ddSpinnerMain .ddSpinnerMinus, .yt-booking-engine-snipe .be-container-snipe .bus-pax-select .ddSpinnerMain .ddSpinnerPlus {
+    height: 26px;
+    top: 9px;
+    background-color: #fff;
+    border-radius: 2px;
+    border: 1px solid #cdcecf;
+    width: 30px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .bus-pax-select .ddSpinnerMain .ddSpinnerMinus {
+    left: auto;
+    right: 40px;
+    background-position: -21px -22px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .bus-pax-select .ddSpinnerMain .ddSpinnerMinus.disabled {
+        background-position: 11px -22px !important;
+        cursor: default
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .bus-pax-select .ddSpinnerMain .ddSpinnerPlus {
+    right: 12px;
+    background-position: 11px 9px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .bus-pax-select .ddSpinnerMain .ddSpinnerPlus.disabled {
+        background-position: -21px 9px !important;
+        cursor: default
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .be-trains .oneway-roundtrip .w50 {
+    width: 36%
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-trains .oneway-roundtrip .w50 .irctcPadLeft {
+        padding-left: 60px
+    }
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-trains .oneway-roundtrip .w50 {
+        float: none;
+        width: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-trains .train-depart {
+    border: none !important
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-trains .irctc-blk {
+    display: inline-block;
+    padding: 0;
+    background: #f7f7f7;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    left: 6px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-trains .irctc-blk .ico-be-irctc {
+        background-position: -99px -83px;
+        height: 37px
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .be-trains .journey-details {
+    width: 100%;
+    float: right;
+    position: relative
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-trains .journey-details .multicity, .yt-booking-engine-snipe .be-container-snipe .be-trains .journey-details .oneway-roundtrip {
+        width: 87.1%
+    }
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-trains .journey-details .multicity, .yt-booking-engine-snipe .be-container-snipe .be-trains .journey-details .oneway-roundtrip {
+        width: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-trains .journey-details .ripple-parent {
+    width: 12.9%
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-trains .journey-details .CitySwap .beSwapCity {
+    right: -4.4%
+}
+
+@media only screen and (max-width:800px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-trains .journey-details .CitySwap .beSwapCity {
+        left: 100%
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-trains .journey-details .CitySwap .beSwapCity {
+        right: 50%;
+        top: 36px;
+        transform: rotate(90deg) !important
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-trains .journey-details .CitySwap .beSwapCity {
+        left: 100%
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-trains .search-btn {
+        margin-top: 0
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays {
+    -ms-overflow-style: -ms-autohiding-scrollbar
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        border-radius: 10px;
+        background: hsla(0,3%,47%,.35) !important
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays ::-webkit-scrollbar {
+        width: 9px;
+        cursor: pointer;
+        background: none !important
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays ::-webkit-scrollbar-thumb {
+        background-color: hsla(0,3%,47%,.35) !important;
+        opacity: .4;
+        border-radius: 3px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .select-with-bg {
+        padding: 0;
+        border-right: 0 none !important
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-holidays .select-with-bg .defaultStructure {
+            width: 100%;
+            background-color: #fff;
+            padding: 17.5px
+        }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-holidays .select-with-bg .dd {
+            border: none;
+            line-height: 30px;
+            background: #fff;
+            padding: 12px 10px
+        }
+
+@media all\0 {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .select-with-bg .dd {
+        line-height: 30px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .select-with-bg .dd .ddlabel {
+    font-size: 1.14286em
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .select-with-bg .dd .ddChild {
+    border-radius: 0;
+    top: 58px !important;
+    background-color: #fff;
+    z-index: 9999;
+    display: block;
+    position: absolute;
+    visibility: visible;
+    height: 192px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .select-with-bg .dd .ddChild li {
+        border: none !important;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: none
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-holidays .select-with-bg .dd .ddChild li.selected, .yt-booking-engine-snipe .be-container-snipe .be-holidays .select-with-bg .dd .ddChild li:focus, .yt-booking-engine-snipe .be-container-snipe .be-holidays .select-with-bg .dd .ddChild li:hover {
+            background: #f34f4f;
+            color: #fff
+        }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .select-with-bg .dd .ddChild .viewport {
+        height: 192px;
+        position: relative;
+        overflow: hidden;
+        width: 100%
+    }
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .select-with-bg {
+        float: none;
+        width: 100%;
+        border-right: 1px solid #e5e5e5;
+        padding: 0;
+        margin-top: 0
+    }
+}
+
+@media only screen and (max-width:900px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .m-top {
+        margin-top: 15px
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .m-top {
+        margin-top: 0
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .mt20 {
+    margin-top: 20px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .holiday-more > li:first-child {
+    margin-left: 0;
+    width: 200px
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .holiday-more > li:first-child {
+        width: 48%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .holiday-origin {
+    margin-top: 22px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .holiday-origin > li {
+        position: relative;
+        float: left;
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-right: 1px solid #fbfbfb;
+        width: 52%
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-holidays .holiday-origin > li:focus {
+            border: 1px solid #2476bb
+        }
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .holiday-origin > li {
+        margin-bottom: 22px;
+        border-right: 1px solid #e5e5e5;
+        width: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .holiday-origin > li .ico-be-place {
+    top: 7px !important
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .explore {
+    font-size: 1.5em;
+    color: #fff
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .explore {
+        color: #333
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .explore > li {
+    float: left
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .explore > li:first-child {
+        margin-right: 15px
+    }
+
+@media only screen and (max-width:1024px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .explore > li:first-child {
+        display: block;
+        float: none;
+        margin-bottom: 22px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .explore > li span {
+    display: inline-block
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .explore > li .days-counter {
+        display: block
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .explore > li .days-counter span {
+    background: #fff;
+    color: #333;
+    padding: 5px;
+    text-align: center;
+    width: 25px;
+    float: left;
+    position: relative;
+    top: 8px;
+    border-right: 1px solid #e5e5e5
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .explore > li .days-counter span {
+        background: #333;
+        color: #fff
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .explore > li .explore-btn {
+    font-size: 1em;
+    float: left;
+    text-align: center
+}
+
+@media only screen and (max-width:1024px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .explore > li .explore-btn {
+        width: 200px
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .explore > li .explore-btn {
+        width: 100%
+    }
+}
+
+@media (min-width:611px) and (max-width:3000px) {
+    .yt-booking-engine-snipe .be-container-snipe .in-one-line .multicity-stay {
+        float: left;
+        margin: 20px 0 14px 40px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .in-one-line + .oneway-roundtrip {
+    margin-top: 15px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .select-with-arrow .ico-be-sub-arrow-v2 {
+    position: absolute;
+    top: 20px;
+    right: 2px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .select-with-arrow .ico-be-sub-arrow {
+    position: absolute;
+    top: 18px;
+    right: 0
+}
+
+.yt-booking-engine-snipe .be-container-snipe .select-with-arrow .ddcommon .ddChild {
+    top: 27px !important;
+    border: 1px solid #d1d1d1 !important
+}
+
+.yt-booking-engine-snipe .be-container-snipe .separate .wp1 {
+    width: 80%;
+    padding: 11px 10px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .separate .nlpInput input {
+    float: left;
+    border: 1px solid #e5e5e5;
+    border-right: 1px solid #fbfbfb;
+    background: #fff;
+    padding: 12px 50px 12px 10px;
+    padding: 12px 10px\9;
+    text-overflow: ellipsis;
+    width: 100%;
+    font: normal 1.143em/20px Rubik,sans-serif;
+    border: none
+}
+
+@media only screen and (max-width:1200px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .separate .nlpInput input {
+        padding: 12px 10px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .separate .nlpInput input::-ms-clear {
+    width: 0;
+    height: 0
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .separate .nlpInput input {
+        padding: 24px 15px
+    }
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .separate .nlpInput input {
+        padding: 18px 15px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .separate .nlpInput input:focus {
+    border: 1px solid #2476bb
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .separate .nlpInput input {
+        border: 1px solid #e5e5e5
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .separate .nlpInput {
+        float: none;
+        width: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .separate .wp2 {
+    width: 16.5%;
+    padding: 12px 10px;
+    margin-top: 0;
+    margin-left: -2px;
+    background-color: #ff7d23;
+    color: #fff;
+    border: 1px solid #ff7d23;
+    font: normal 1.571em/18px Rubik,sans-serif;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .separate .wp2:focus, .yt-booking-engine-snipe .be-container-snipe .separate .wp2:hover {
+        background-color: #e96600
+    }
+
+@media only screen and (max-width:1024px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .separate .wp2 {
+        width: 30%;
+        margin-top: 15px
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .separate .wp2 {
+        float: none;
+        width: 100%;
+        margin-top: 22px;
+        padding: 24px 15px;
+        position: relative
+    }
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .separate .wp2 {
+        padding: 18px 15px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .w80 {
+    width: 60%
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .w80 {
+        margin-bottom: 22px
+    }
+}
+
+@media only screen and (max-width:900px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .w80 {
+        float: left;
+        width: 60% !important
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .w80 {
+        float: none;
+        width: 100% !important
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .w170 {
+    width: 40%
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .w170 {
+        float: none;
+        width: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .beTitle {
+    color: #fff;
+    font-size: 1.286em;
+    padding: 0 0 10px
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .beTitle {
+        color: #333
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .search-flights-btn {
+        float: none;
+        width: 100%;
+        padding: 12px 8px;
+        bottom: 0
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .multicity, .yt-booking-engine-snipe .be-container-snipe .be-holidays .oneway-roundtrip {
+    float: left;
+    width: 88%
+}
+
+@media only screen and (max-width:1024px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .multicity, .yt-booking-engine-snipe .be-container-snipe .be-holidays .oneway-roundtrip {
+        width: 100%
+    }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .multicity, .yt-booking-engine-snipe .be-container-snipe .be-holidays .oneway-roundtrip {
+        float: none;
+        width: 100%
+    }
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays input {
+        padding: 18px 30px 18px 15px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays .oneway-roundtrip > ul > li {
+    width: 33.5%
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .oneway-roundtrip > ul > li.destination-city {
+        width: 33%
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .oneway-roundtrip > ul > li.select-with-bg .dd {
+        width: 100% !important
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-holidays .oneway-roundtrip > ul > li.select-with-bg .dd .pointDwnPax {
+            background-position: -161px -27px
+        }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .oneway-roundtrip > ul > li input {
+        padding-right: 10px
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .be-holidays.only-leaving .oneway-roundtrip > ul > li {
+    width: 35%
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays.only-leaving .oneway-roundtrip > ul > li.destination-city {
+        width: 65%
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .be-cruise .beTitle {
+    color: #fff;
+    font-size: 1.286em;
+    padding: 5px 0 10px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-cruise .oneway-roundtrip {
+    width: 88%
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-cruise .oneway-roundtrip {
+        width: 100%
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples {
+    background: #fff
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples {
+        background: none
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples > li {
+    width: 33.333% !important;
+    padding: 0
+}
+
+@media only screen and (max-width:480px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples > li {
+        float: left !important;
+        padding: 0 !important
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples > li .dd {
+    background: #fff none repeat scroll 0 0;
+    border: medium none;
+    line-height: normal;
+    padding: 11px;
+    width: 100% !important
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples > li .dd {
+        padding: 11.5px 5px
+    }
+}
+
+@media (-ms-high-contrast:none) {
+    .yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples > li .dd {
+        padding: 9px
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples > li .dd .ddChild {
+    border-radius: 0;
+    top: 38px !important;
+    left: 0
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples > li .dd .ddChild li {
+        border: none !important;
+        width: 100%
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples > li .dd .ddChild li.selected, .yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples > li .dd .ddChild li:focus, .yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples > li .dd .ddChild li:hover {
+            background: #f34f4f;
+            color: #fff
+        }
+
+.yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples > li .dd .pointDwnPax {
+    background-position: -161px -26px;
+    top: 10x
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples > li {
+        float: none;
+        width: 100%;
+        border-right: 1px solid #e5e5e5;
+        padding: 10px 15px;
+        margin-top: 0
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples .scrollable .viewport {
+    width: 100%
+}
+
+@media screen and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-cruise .search-btn {
+        margin-top: 0
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-activities .activity-list {
+    position: relative;
+    padding-left: 30px !important
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-activities .act-logo {
+    background: transparent url(~/Content/fresco/snipe/dist/images/booking-engine.png?0597d1f053fcc7054b285430b792d73d) no-repeat scroll;
+    position: absolute;
+    left: 5px
+}
+
+    .yt-booking-engine-snipe .be-container-snipe .be-activities .act-logo.activities {
+        background-position: -195px -119px;
+        float: right;
+        padding-left: 10px;
+        width: 15px;
+        margin-right: 5px
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-activities .act-logo.cities {
+        background-position: -4px -121px;
+        float: right;
+        padding-left: 10px;
+        width: 15px;
+        margin-right: 5px
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-activities .act-logo.monument {
+        background-position: -273px -91px;
+        float: right;
+        padding-left: 10px;
+        width: 15px;
+        margin-right: 5px
+    }
+
+.yt-booking-engine-snipe .be-container-snipe .be-activities .journey-details .oneway-roundtrip {
+    width: 88%
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-activities .journey-details .oneway-roundtrip {
+        width: 100%
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-activities .journey-details .oneway-roundtrip .sprite-booking-engine.ico-be-place.icon-inside {
+            display: none
+        }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .be-activities .journey-details .oneway-roundtrip .activities-tuple li {
+    width: 100%;
+    border-right: 0 none
+}
+
+@media screen and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-activities .search-btn {
+        margin-top: 0
+    }
+}
+
+.yt-booking-engine-snipe .be-container-snipe .ico-be-radio {
+    background: url(~/Content/fresco/snipe/dist/images/radio-unchecked.png?ac6fcad87896c0f518a892469e3bca26) no-repeat;
+    background-position: 0 -25px;
+    height: 12px;
+    width: 12px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .ico-checkbox, .yt-booking-engine-snipe .be-container-snipe .ico-checkbox-checked {
+    background-image: url(~/Content/fresco/snipe/dist/images/ico-pg-customcheckBox.png?0d18682175ccb7f815106bef50347cb2);
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: -1px 5px 0;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    vertical-align: middle
+}
+
+.yt-booking-engine-snipe .be-container-snipe .ico-checkbox {
+    background-position: 0 -15px
+}
+
+.yt-booking-engine-snipe .be-container-snipe .ico-checkbox-checked {
+    background-position: 0 0
+}
+
+@media only screen and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe ul.be-tabs-snipe #booking_engine_flight_hotels {
+        display: none
+    }
+}
+
+@media only screen and (max-width:960px) {
+    .yt-booking-engine-snipe .be-container-snipe ul.be-tabs-snipe {
+        overflow-x: scroll;
+        white-space: nowrap
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe ul.be-tabs-snipe li {
+            display: inline;
+            float: none
+        }
+
+            .yt-booking-engine-snipe .be-container-snipe ul.be-tabs-snipe li a {
+                display: inline-block;
+                width: auto
+            }
+
+    .yt-booking-engine-snipe .be-container-snipe .betaBookingEngine {
+        top: 0
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .nudge-arrow-x:after {
+        content: "\AB"
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .yt-booking-engine-snipe .be-container-snipe .nudge-arrow-x {
+        top: 13px
+    }
+}
+
+@media (min-width:611px) and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w170, .yt-booking-engine-snipe .be-container-snipe .journey-details .w225 {
+        width: 45.5% !important;
+        margin: 0 13px !important
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .w170.modifyList, .yt-booking-engine-snipe .be-container-snipe .journey-details .w225 {
+            width: 45.5% !important
+        }
+
+    .yt-booking-engine-snipe .be-container-snipe .ac_results {
+        width: 100% !important
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .pax-details {
+        width: 45.5% !important;
+        margin: 15px 13px 0
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .ripple-parent {
+        width: 45.5% !important;
+        margin: 0 13px !important
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .w66 {
+        width: 96% !important;
+        margin: 0 0 5px 13px
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-cruise .oneway-roundtrip > ul > li, .yt-booking-engine-snipe .be-container-snipe .be-holidays .oneway-roundtrip > ul > li {
+        width: 29% !important;
+        margin: 0 13px
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-trains .oneway-roundtrip > ul > li {
+        width: 29% !important;
+        margin: 0 13px;
+        padding: 0
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-activities .oneway-roundtrip, .yt-booking-engine-snipe .be-container-snipe .be-cruise .oneway-roundtrip, .yt-booking-engine-snipe .be-container-snipe .be-trains .oneway-roundtrip {
+        margin-bottom: 10px;
+        width: 100% !important
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples {
+        background: none
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-activities .journey-details .oneway-roundtrip .activities-tuple li {
+        margin-left: 10px;
+        width: 97%
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-activities .ripple-parent, .yt-booking-engine-snipe .be-container-snipe .be-cruise .ripple-parent, .yt-booking-engine-snipe .be-container-snipe .be-holidays .ripple-parent, .yt-booking-engine-snipe .be-container-snipe .be-trains .ripple-parent, .yt-booking-engine-snipe .be-container-snipe .textSearchBar .ripple-parent {
+        width: 46.5% !important;
+        margin: 0 auto !important;
+        float: none;
+        border-radius: 2px
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .desktop-only {
+        display: none
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .separate .nlpInput {
+        width: 100% !important
+    }
+}
+
+@media (min-width:840px) and (max-width:1024px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w66, .yt-booking-engine-snipe .be-container-snipe .journey-details .w66.modifyList {
+        width: 94% !important;
+        margin: 0 0 5px 12px
+    }
+}
+
+@media (min-width:760px) and (max-width:840px) {
+    .yt-booking-engine-snipe .be-container-snipe .journey-details .w66 {
+        width: 95.7% !important;
+        margin: 0 0 5px 10px
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .journey-details .w66.modifyList {
+            width: 95.7% !important;
+            margin: 0 0 5px 12px
+        }
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .be-container-snipe .mor-option .selc-flight-options .desktop-only {
+        display: none
+    }
+
+    .yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples {
+        background: none
+    }
+
+        .yt-booking-engine-snipe .be-container-snipe .be-cruise .cruise-tuples > li {
+            width: 100% !important;
+            float: left !important;
+            padding: 0
+        }
+
+    .yt-booking-engine-snipe .be-container-snipe .separate .nlpInput {
+        width: 100% !important
+    }
+}
+
+@media only screen and (max-width:650px) {
+    .yt-booking-engine-snipe .be-container-snipe .be-holidays .oneway-roundtrip > ul > li {
+        width: 100% !important
+    }
+}
+
+.yt-booking-engine-snipe .search-height {
+    max-height: 64px
+}
+
+.yt-booking-engine-snipe .ripple-parent {
+    overflow: hidden;
+    background-color: #fff;
+    position: relative;
+    width: 12%;
+    height: 66px;
+    border-radius: 0;
+    float: left
+}
+
+@media only screen and (max-width:610px) and (min-width:1px) {
+    .yt-booking-engine-snipe .ripple-parent {
+        width: 100% !important;
+        height: auto
+    }
+}
+
+@media (min-width:611px) and (max-width:1024px) {
+    .yt-booking-engine-snipe .ripple-parent {
+        background: none;
+        max-height: none;
+        height: auto
+    }
+}
+
+.yt-booking-engine-snipe .ripple {
+    display: block;
+    position: absolute;
+    background: #b8e0e0;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0)
+}
+
+    .yt-booking-engine-snipe .ripple.animate {
+        -webkit-animation: ripple .65s linear 0s 1 normal none running;
+        -moz-animation: ripple .65s linear 0s 1 normal none running;
+        -ms-animation: ripple .65s linear 0s 1 normal none running;
+        -o-animation: ripple .65s linear 0s 1 normal none running;
+        animation: ripple .65s linear 0s 1 normal none running
+    }
+
+.goToRight {
+    -moz-animation: goingRight .3s 1 ease-in-out;
+    -webkit-animation: goingRight .3s 1 ease-in-out;
+    -o-animation: goingRight .3s 1 ease-in-out;
+    -ms-animation: goingRight .3s 1 ease-in-out;
+    animation: goingRight .3s 1 ease-in-out
+}
+
+@-moz-keyframes goingRight {
+    0% {
+        -moz-transform: translateX(0);
+        border-right-color: transparent
+    }
+
+    60% {
+        -moz-transform: translateX(60%);
+        opacity: 0;
+        border-right-color: transparent
+    }
+
+    to {
+        -moz-transform: translateX(0);
+        opacity: 1;
+        border-right-color: transparent
+    }
+}
+
+@-webkit-keyframes goingRight {
+    0% {
+        -webkit-transform: translateX(0);
+        border-right-color: transparent
+    }
+
+    60% {
+        -webkit-transform: translateX(60%);
+        opacity: 0;
+        border-right-color: transparent
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+        opacity: 1;
+        border-right-color: transparent
+    }
+}
+
+.goToLeft {
+    -moz-animation: goingLeft .3s 1 ease-in-out;
+    -webkit-animation: goingLeft .3s 1 ease-in-out;
+    -o-animation: goingLeft .3s 1 ease-in-out;
+    -ms-animation: goingLeft .3s 1 ease-in-out;
+    animation: goingLeft .3s 1 ease-in-out
+}
+
+@-moz-keyframes goingLeft {
+    0% {
+        -moz-transform: translateX(0)
+    }
+
+    60% {
+        -moz-transform: translateX(-60%);
+        opacity: 0
+    }
+
+    to {
+        -moz-transform: translateX(0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes goingLeft {
+    0% {
+        -webkit-transform: translateX(0)
+    }
+
+    60% {
+        -webkit-transform: translateX(-60%);
+        opacity: 0
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+        opacity: 1
+    }
+}
